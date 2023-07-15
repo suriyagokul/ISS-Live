@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Particles from "react-tsparticles";
+import { loadStarsPreset } from "tsparticles-preset-stars";
+import GetAstros from "./pages/GetAstros";
+import CurrentISS from "./pages/CurrentISS";
+import "./App.css";
+import "./index.css";
+
+function particlesInit(tsParticles) {
+  console.log("init", tsParticles);
+
+  loadStarsPreset(tsParticles);
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <Particles
+        className="particles-container"
+        options={{ preset: "stars" }}
+        init={particlesInit}
+      />
+      <div className="content-container">
+        <GetAstros />
+        <CurrentISS />
+      </div>
     </div>
   );
 }
