@@ -25,7 +25,7 @@ function CurrentISS() {
       className="flex items-center justify-around  m-5 p-5 border-2 cursor-pointer hover:scale-105 transition duration-150 ease-in border-white rounded-md"
       onClick={async () => {
         navigator.clipboard.writeText(
-          `${currentCoordinates.latitude}${currentCoordinates.longitude}`
+          `${currentCoordinates.latitude} ${currentCoordinates.longitude}`
         );
         const clipboardText = await navigator.clipboard.readText();
         alert(`Copied ${clipboardText}`);

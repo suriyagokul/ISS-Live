@@ -21,8 +21,8 @@ function App() {
         init={particlesInit}
       />
       <div className="content-container">
-        <GetAstros />
         <CurrentISS />
+        <GetAstros />
       </div>
     </div>
   );
